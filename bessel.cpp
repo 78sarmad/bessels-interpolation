@@ -41,8 +41,10 @@ public:
         srand(1);
         for (int i = 0; i < n; i++)
         {
-            x[i] = i + 1;
-            fx[i] = rand() % 10;
+            // x[i] = i + 1;
+            x[i] = (int)xp + i;
+            // fx[i] = rand() % 10;
+            fx[i] = rand() % 4;
         }
     }
 
@@ -132,7 +134,8 @@ public:
     // calculate p for a specified origin
     double calculateP(int xo)
     {
-        return ((xp - xo) / findInterval());
+        double h = findInterval();
+        return ((xp - xo) / h);
     }
 
     // select origin for interpolation
